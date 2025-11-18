@@ -84,6 +84,14 @@ This verifies:
 2. Python pattern matching structure
 3. The mark equality `([()]) = (())`
 
+## Testing
+
+Run the automated checks with `pytest`:
+
+```bash
+pytest
+```
+
 ## Core Claims
 
 1. **Discovery, not invention**: The Formatic mark is not designed but discovered as a consequence of structural requirements
