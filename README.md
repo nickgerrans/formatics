@@ -56,21 +56,22 @@ The wildcard `_` is not a convenience—it's the **terminal object** of the patt
 
 This is not a design choice but a logical requirement for semantic correctness.
 
-## Repository Structure
+## Repository Structure (by prefix/suffix)
 
-```
-formatics/
-├── README.md                          # This file
-├── _ref/
-│   └── form_/                         # Reference files beginning with "form"
-│       ├── formatic_mark.md           # Core definition and concepts
-│       └── formatic_mark.py           # Python implementation & demos
-├── theory/
-│   ├── categorical_interpretation.md # Category theory mapping
-│   ├── python_mapping.md             # Pattern matching in Python
-│   └── necessity_proof.md            # Why the mark is mandatory
-└── examples/                         # Future: more demonstrations
-```
+Use the prefix/suffix groupings as the primary navigation tool (see
+[Prefix/Suffix Organization Guide](PREFIX_SUFFIX_ORGANIZATION.md) for full
+details):
+
+- `formET*`: core corpus (`formET_0a/1a/2a`, `formET_A1/B1/C1`, `formET_Ba/Ca`,
+  `formET.pdf`, `formET.ods`).
+- `_ref/form_/formatic_mark.{md,py}` with paired tests in
+  `tests/test_formatic_mark.py`.
+- `theory/*`: conceptual proofs and mappings (`categorical_interpretation.md`,
+  `necessity_proof.md`, `python_mapping.md`, `index.md`).
+- `filestate.py` with its mirror test `tests/test_filestate.py`.
+- `prefix_suffix_index.py`: CLI for generating live prefix/suffix views.
+- Reference docs: `FORMATICS_AGENT_PROTOCOL.md`, `CONTRIBUTING-AGENT.md`,
+  `QUICK_REFERENCE.md`, `README.md`.
 
 ## Quick Start
 
@@ -84,6 +85,21 @@ This verifies:
 1. The categorical interpretation (Core ≅ Skel)
 2. Python pattern matching structure
 3. The mark equality `([()]) = (())`
+
+## Directory prefixes and suffixes
+
+Use `prefix_suffix_index.py` to view every file and folder grouped by the
+alphabetic prefixes and suffixes in their names, ignoring file extensions:
+
+```bash
+python3 prefix_suffix_index.py            # scan from the repository root
+python3 prefix_suffix_index.py tests      # scan a specific subdirectory
+python3 prefix_suffix_index.py --include-hidden
+```
+
+Each section lists entries by prefix first and suffix second so you can see
+clusters like `formET_*` or `_ref/*` together even when they have different
+extensions.
 
 ## Folder leap tracking (`filestate.py`)
 
