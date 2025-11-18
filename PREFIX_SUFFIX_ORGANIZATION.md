@@ -1,6 +1,6 @@
 # Prefix/Suffix Organization Guide
 
-This guide combines the `prefix_suffix_index.py` grouping logic with the FormET
+This guide combines the `tools/prefix_suffix_index.py` grouping logic with the FormET
 naming patterns to keep the repository easy to navigate for agents and humans.
 Alphabetic prefixes and suffixes are treated as the primary keys; file
 extensions are ignored.
@@ -9,19 +9,20 @@ extensions are ignored.
 
 - Full scan from repository root:
   ```bash
-  python3 prefix_suffix_index.py
+  python3 tools/prefix_suffix_index.py
   ```
 - Focused scan (e.g., tests only):
   ```bash
-  python3 prefix_suffix_index.py tests
+  python3 tools/prefix_suffix_index.py tests
   ```
 
 ## Primary prefix clusters
 
-- **formET***: corpus of FormET artifacts (`formET_0a.txt`, `formET_1a.txt`,
-  `formET_2a.txt`, `formET_A1.txt`, `formET_B1.txt`, `formET_Ba.txt`,
-  `formET_C1.txt`, `formET_Ca.txt`, `formET.pdf`, `formET.ods`). Use the common
-  prefix to track versions and variants together.
+- **formET_corpus/**: FormET artifacts grouped by prefix
+  (`formET_0a.txt`, `formET_1a.txt`, `formET_2a.txt`, `formET_A1.txt`,
+  `formET_B1.txt`, `formET_Ba.txt`, `formET_C1.txt`, `formET_Ca.txt`,
+  `formET.pdf`, `formET.ods`). Use the common prefix to track versions and
+  variants together.
 - **formatic***: reference definitions and Python implementations inside
   `_ref/form_/formatic_mark.{md,py}` with corresponding tests in
   `tests/test_formatic_mark.py`.
@@ -29,8 +30,8 @@ extensions are ignored.
   `necessity_proof.md`, `python_mapping.md`, `index.md`).
 - **filestate***: folder-leap tracking utility (`filestate.py`) with coverage in
   `tests/test_filestate.py`.
-- **prefix_suffix***: directory-grouping CLI (`prefix_suffix_index.py`) that
-  powers this guide.
+- **prefix_suffix***: directory-grouping CLI (`tools/prefix_suffix_index.py`)
+  that powers this guide.
 - **protocol/reference docs**: `FORMATICS_AGENT_PROTOCOL.md`,
   `CONTRIBUTING-AGENT.md`, `QUICK_REFERENCE.md`, and the repository root
   `README.md`.
@@ -47,7 +48,8 @@ are shared:
   `formatic_mark.py`, `test_formatic_mark.py`).
 - **`*filestate`**: runtime location tracking (`filestate.py`,
   `test_filestate.py`).
-- **`*index`**: entry-point indexes (`prefix_suffix_index.py`, `theory/index.md`).
+- **`*index`**: entry-point indexes (`tools/prefix_suffix_index.py`,
+  `theory/index.md`).
 
 ## Navigation heuristics
 

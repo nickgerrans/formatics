@@ -62,14 +62,14 @@ Use the prefix/suffix groupings as the primary navigation tool (see
 [Prefix/Suffix Organization Guide](PREFIX_SUFFIX_ORGANIZATION.md) for full
 details):
 
-- `formET*`: core corpus (`formET_0a/1a/2a`, `formET_A1/B1/C1`, `formET_Ba/Ca`,
-  `formET.pdf`, `formET.ods`).
+- `formET_corpus/`: core corpus directory containing `formET_0a/1a/2a`,
+  `formET_A1/B1/C1`, `formET_Ba/Ca`, `formET.pdf`, and `formET.ods`.
 - `_ref/form_/formatic_mark.{md,py}` with paired tests in
   `tests/test_formatic_mark.py`.
 - `theory/*`: conceptual proofs and mappings (`categorical_interpretation.md`,
   `necessity_proof.md`, `python_mapping.md`, `index.md`).
 - `filestate.py` with its mirror test `tests/test_filestate.py`.
-- `prefix_suffix_index.py`: CLI for generating live prefix/suffix views.
+- `tools/prefix_suffix_index.py`: CLI for generating live prefix/suffix views.
 - Reference docs: `FORMATICS_AGENT_PROTOCOL.md`, `CONTRIBUTING-AGENT.md`,
   `QUICK_REFERENCE.md`, `README.md`.
 
@@ -88,13 +88,13 @@ This verifies:
 
 ## Directory prefixes and suffixes
 
-Use `prefix_suffix_index.py` to view every file and folder grouped by the
+Use `tools/prefix_suffix_index.py` to view every file and folder grouped by the
 alphabetic prefixes and suffixes in their names, ignoring file extensions:
 
 ```bash
-python3 prefix_suffix_index.py            # scan from the repository root
-python3 prefix_suffix_index.py tests      # scan a specific subdirectory
-python3 prefix_suffix_index.py --include-hidden
+python3 tools/prefix_suffix_index.py            # scan from the repository root
+python3 tools/prefix_suffix_index.py tests      # scan a specific subdirectory
+python3 tools/prefix_suffix_index.py --include-hidden
 ```
 
 Each section lists entries by prefix first and suffix second so you can see
