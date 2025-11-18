@@ -70,8 +70,25 @@ details):
   `necessity_proof.md`, `python_mapping.md`, `index.md`).
 - `filestate.py` with its mirror test `tests/test_filestate.py`.
 - `tools/prefix_suffix_index.py`: CLI for generating live prefix/suffix views.
+- `tools/repo_standardizer.py`: minimal hygiene pass that ensures baseline
+  repository files exist (e.g., `.gitignore`, `.editorconfig`, dependencies).
 - Reference docs: `FORMATICS_AGENT_PROTOCOL.md`, `CONTRIBUTING-AGENT.md`,
   `QUICK_REFERENCE.md`, `README.md`.
+
+## Repository standardization
+
+Run the standardizer to align the repository with the minimal Python project
+layout described in `tools/repo_standardizer.py`:
+
+```bash
+python3 tools/repo_standardizer.py           # run from repo root
+python3 tools/repo_standardizer.py path/to/repo
+```
+
+The tool will create a Python-friendly `.gitignore`, a baseline
+`.editorconfig`, and a placeholder `requirements.txt` if none are present. It
+also reports whether a README, LICENSE, or testing setup exists so you can fill
+any gaps.
 
 ## Quick Start
 
