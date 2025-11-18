@@ -1,12 +1,12 @@
-# Contributing to Formatics: Guidelines for GPTs
+# Contributing to Formatics: Guidelines for AI Agents
 
-This document provides explicit guidelines for AI models (GPTs) assisting with the Formatics repository. Since GPTs cannot see the repository directly, these rules ensure coherent, maintainable contributions.
+This document provides explicit guidelines for AI models (agents) assisting with the Formatics repository. Since AI agents cannot see the repository directly, these rules ensure coherent, maintainable contributions.
 
 ---
 
 ## 0. Ground Rule: Blindfolded Editing
 
-A GPT **does not see your repo**.
+An AI agent **does not see your repo**.
 So every code change is logically:
 
 > `new_file = transform(old_file, prompt_context)`
@@ -22,9 +22,9 @@ All guidance below assumes:
 
 ---
 
-## 1. Protocol for Asking a GPT to Modify Code
+## 1. Protocol for Asking an AI Agent to Modify Code
 
-When you (future you / other humans) use a GPT on the Formatics repo, the prompt should:
+When you (future you / other humans) use an AI agent on the Formatics repo, the prompt should:
 
 1. **Show the exact file** to be edited (full text).
 2. **Say what you want** in terms of behavior or invariant:
@@ -47,7 +47,7 @@ This is how you compensate for "repo is invisible."
 
 ## 2. File & Module Naming Rules for Formatics
 
-To keep things coherent for GPTs:
+To keep things coherent for AI agents:
 
 * **Core naming:**
 
@@ -63,15 +63,15 @@ To keep things coherent for GPTs:
   * `element_theory.py` for X ~ C / strata ! structure logic.
   * `prefix_logic.py` for `un` / `null` / set-theory parallels.
 
-GPT rule of thumb:
+Agent rule of thumb:
 
 > "If I'm writing Formatics semantics, they go in a `form_*.py` or a clearly named core module. Filestate/folderleap stays about *files & movement*, not math."
 
 ---
 
-## 3. Style & Safety Constraints for GPT Code
+## 3. Style & Safety Constraints for Agent Code
 
-GPTs generating Python in this repo should follow:
+AI agents generating Python in this repo should follow:
 
 ### 3.1. No global container hijacking
 
@@ -101,7 +101,7 @@ GPTs generating Python in this repo should follow:
 
 ## 4. Filestate / Folderleap Canon Rules
 
-For any GPT touching these:
+For any AI agent touching these:
 
 1. `filestate.py` is the **one true backbone**.
 
@@ -118,7 +118,7 @@ For any GPT touching these:
    * Handle folder-leap detection + response.
    * Expose a **no-op or simple** `folderleap()` symbol so user code can safely import it even if unused at runtime.
 
-4. **No GPT should**:
+4. **No AI agent should**:
 
    * Invent new origin markers (`# HOME:` etc.) without explicit user request.
    * Hardcode machine-specific paths.
@@ -126,7 +126,7 @@ For any GPT touching these:
 
 ---
 
-## 5. Formatics Semantics: How GPTs Should Encode Them
+## 5. Formatics Semantics: How AI Agents Should Encode Them
 
 When encoding your theory into code:
 
@@ -152,7 +152,7 @@ When encoding your theory into code:
 
 ### 5.2. Never bury the math in "clever" syntax
 
-* GPTs should **avoid metaprogramming tricks** that obscure the theory.
+* AI agents should **avoid metaprogramming tricks** that obscure the theory.
 
 * Code should read like:
 
@@ -167,15 +167,15 @@ When encoding your theory into code:
 
 ## 6. Change Discipline: Patch, Don't Rewrite
 
-When asking GPT to help:
+When asking an AI agent to help:
 
 * **One file at a time**.
-* GPT edits should be **minimal diff** style:
+* Agent edits should be **minimal diff** style:
 
   * Add functions instead of inlining logic into existing ones, unless requested.
   * Refactor only when explicitly told.
 
-For GPT:
+For AI agents:
 
 > "If I don't see it in the prompt, I must assume it doesn't exist."
 
@@ -186,9 +186,9 @@ So:
 
 ---
 
-## 7. Tests: How GPTs Should Add Them
+## 7. Tests: How AI Agents Should Add Them
 
-If you let GPT add tests:
+If you let an AI agent add tests:
 
 * Use `tests/` directory:
 
@@ -209,7 +209,7 @@ def test_anchor_xc_invariants():
 
 ## 8. Summary: The Core Protocol
 
-Any GPT assisting with this repo MUST assume:
+Any AI agent assisting with this repo MUST assume:
 
 - It cannot see the repo; it only sees what is pasted into the prompt.
 - It must not invent non-existent modules or paths.
@@ -236,7 +236,7 @@ Any GPT assisting with this repo MUST assume:
 
 ## Next Steps
 
-For new contributors or GPT sessions:
+For new contributors or AI agent sessions:
 
 1. Read this document first.
 2. Ask the user to provide the specific file(s) to modify.
@@ -244,4 +244,4 @@ For new contributors or GPT sessions:
 4. Apply minimal, clear changes.
 5. Document theory-to-code mappings in docstrings.
 
-See also: `FORMATICS_GPT_PROTOCOL.md` for a condensed reference.
+See also: `FORMATICS_AGENT_PROTOCOL.md` for a condensed reference.

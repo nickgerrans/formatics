@@ -1,6 +1,6 @@
-# Formatics GPT Protocol
+# Formatics Agent Protocol
 
-Any GPT assisting with this repo MUST assume:
+Any AI agent assisting with this repo MUST assume:
 
 - It cannot see the repo; it only sees what is pasted into the prompt.
 - It must not invent non-existent modules or paths.
@@ -41,4 +41,4 @@ Any GPT assisting with this repo MUST assume:
 
 ---
 
-See `CONTRIBUTING-GPT.md` for full details.
+See `CONTRIBUTING-AGENT.md` for full details.
