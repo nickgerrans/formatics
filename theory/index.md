@@ -4,7 +4,7 @@ Complete guide to the theoretical foundations.
 
 ## Core Documents
 
-### 1. [The Formatic Mark](formatic_mark.md)
+### 1. [The Formatic Mark](../_ref_/form_/formatic_mark.md)
 **Start here**. Defines the fundamental equation `([()]) = (())` and introduces the three operators: slot, orbit, closure.
 
 **Key concepts**:
@@ -43,7 +43,7 @@ Demonstrates the mark in Python's `match`/`case`/`_` syntax.
 
 ## Implementation
 
-### [Python Implementation](../src/formatic_mark.py)
+### [Python Implementation](../_ref_/form_/formatic_mark.py)
 Working code that demonstrates:
 - The three operators as Python classes
 - The mark equality as a function
@@ -53,24 +53,24 @@ Working code that demonstrates:
 
 Run with:
 ```bash
-python3 src/formatic_mark.py
+python3 ../_ref_/form_/formatic_mark.py
 ```
 
 ## Reading Paths
 
 ### For programmers:
 1. [Python Pattern Matching](python_mapping.md)
-2. [The Formatic Mark](formatic_mark.md)
+2. [The Formatic Mark](../_ref_/form_/formatic_mark.md)
 3. [Necessity Proof](necessity_proof.md)
-4. [Python Implementation](../src/formatic_mark.py)
+4. [Python Implementation](../_ref_/form_/formatic_mark.py)
 
 ### For category theorists:
 1. [Categorical Interpretation](categorical_interpretation.md)
-2. [The Formatic Mark](formatic_mark.md)
+2. [The Formatic Mark](../_ref_/form_/formatic_mark.md)
 3. [Necessity Proof](necessity_proof.md)
 
 ### For type theorists:
-1. [The Formatic Mark](formatic_mark.md)
+1. [The Formatic Mark](../_ref_/form_/formatic_mark.md)
 2. [Necessity Proof](necessity_proof.md)
 3. [Categorical Interpretation](categorical_interpretation.md)
 4. [Python Pattern Matching](python_mapping.md)
@@ -81,7 +81,7 @@ python3 src/formatic_mark.py
 
 | Concept | Formatics | Category | Python | Document |
 |---------|-----------|----------|--------|----------|
-| Local container | `()` | Object | `case` | [formatic_mark.md](formatic_mark.md) |
+| Local container | `()` | Object | `case` | [formatic_mark.md](../_ref_/form_/formatic_mark.md) |
 | Equivalence class | `[]` | Iso class | `match` | [categorical_interpretation.md](categorical_interpretation.md) |
 | Universal closure | `(())` | Terminal | `_` | [python_mapping.md](python_mapping.md) |
 
@@ -89,7 +89,7 @@ python3 src/formatic_mark.py
 
 | Domain | Left: Expanded | Right: Collapsed | Document |
 |--------|----------------|------------------|----------|
-| Formatics | `([()]) ` | `(())` | [formatic_mark.md](formatic_mark.md) |
+| Formatics | `([()]) ` | `(())` | [formatic_mark.md](../_ref_/form_/formatic_mark.md) |
 | Category | `Core(C)` | `Skel(C)` | [categorical_interpretation.md](categorical_interpretation.md) |
 | Python | `match: case*: _` | `_` | [python_mapping.md](python_mapping.md) |
 
