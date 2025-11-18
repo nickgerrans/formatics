@@ -84,6 +84,33 @@ This verifies:
 2. Python pattern matching structure
 3. The mark equality `([()]) = (())`
 
+## Folder leap tracking (`filestate.py`)
+
+Use `filestate.py` as a single backbone module to detect when a script is run
+from a different directory than the one where it was last executed:
+
+1. Place `filestate.py` in your project root.
+2. In any script that should track folder moves, add:
+
+   ```python
+   from filestate import folderleap
+   ```
+
+On import, `filestate` records the script's current directory using a
+`# ORIGIN:` tag inserted into the file itself. If the script later runs from a
+different folder, `filestate` prints the move, re-runs the script once by
+default, and updates the embedded origin tag. Set `FILESTATE_DISABLE_TRIGGER=1`
+to skip the automatic re-run (helpful in automated tests) or
+`FILESTATE_DISABLE_AUTO_PRIME=1` to disable all automatic behavior.
+
+## Testing
+
+Run the automated checks with `pytest`:
+
+```bash
+pytest
+```
+
 ## Core Claims
 
 1. **Discovery, not invention**: The Formatic mark is not designed but discovered as a consequence of structural requirements
