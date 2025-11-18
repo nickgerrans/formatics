@@ -61,13 +61,14 @@ This is not a design choice but a logical requirement for semantic correctness.
 ```
 formatics/
 ├── README.md                          # This file
+├── _ref/
+│   └── form_/                         # Reference files beginning with "form"
+│       ├── formatic_mark.md           # Core definition and concepts
+│       └── formatic_mark.py           # Python implementation & demos
 ├── theory/
-│   ├── formatic_mark.md              # Core definition and concepts
 │   ├── categorical_interpretation.md # Category theory mapping
 │   ├── python_mapping.md             # Pattern matching in Python
 │   └── necessity_proof.md            # Why the mark is mandatory
-├── src/
-│   └── formatic_mark.py              # Python implementation & demos
 └── examples/                         # Future: more demonstrations
 ```
 
@@ -76,7 +77,7 @@ formatics/
 Run the demonstration:
 
 ```bash
-python3 src/formatic_mark.py
+python3 _ref/form_/formatic_mark.py
 ```
 
 This verifies:
@@ -123,7 +124,7 @@ pytest
 
 For newcomers:
 
-1. Start with [theory/formatic_mark.md](theory/formatic_mark.md) for the basic definition
+1. Start with [_ref/form_/formatic_mark.md](_ref/form_/formatic_mark.md) for the basic definition
 2. Read [theory/python_mapping.md](theory/python_mapping.md) to see it in familiar code
 3. Explore [theory/categorical_interpretation.md](theory/categorical_interpretation.md) for the deep connection
 4. Study [theory/necessity_proof.md](theory/necessity_proof.md) to understand why this is inevitable

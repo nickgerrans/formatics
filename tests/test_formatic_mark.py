@@ -3,10 +3,10 @@ from pathlib import Path
 
 import pytest
 
-# Ensure the src directory is importable when running tests from repo root
+# Ensure the reference form_ directory is importable when running tests from repo root
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
-SRC_DIR = PROJECT_ROOT / "src"
-sys.path.insert(0, str(SRC_DIR))
+FORM_REF_DIR = PROJECT_ROOT / "_ref" / "form_"
+sys.path.insert(0, str(FORM_REF_DIR))
 
 from formatic_mark import (  # noqa: E402  - imported after sys.path tweak
     Closure,
