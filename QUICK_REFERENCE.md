@@ -89,15 +89,15 @@ You're seeing **the same structural invariant** in different clothing.
 ## Reading Time
 
 - **5 minutes**: This document
-- **15 minutes**: [theory/formatic_mark.md](theory/formatic_mark.md)
+- **15 minutes**: [_ref/form_/formatic_mark.md](_ref/form_/formatic_mark.md)
 - **30 minutes**: [theory/python_mapping.md](theory/python_mapping.md) + [theory/categorical_interpretation.md](theory/categorical_interpretation.md)
 - **1 hour**: [theory/necessity_proof.md](theory/necessity_proof.md)
-- **Hands-on**: `python3 src/formatic_mark.py`
+- **Hands-on**: `python3 _ref/form_/formatic_mark.py`
 
 ## Next Steps
 
-1. Run the demo: `python3 src/formatic_mark.py`
-2. Read [theory/formatic_mark.md](theory/formatic_mark.md)
+1. Run the demo: `python3 _ref/form_/formatic_mark.py`
+2. Read [_ref/form_/formatic_mark.md](_ref/form_/formatic_mark.md)
 3. Explore the necessity proof: [theory/necessity_proof.md](theory/necessity_proof.md)
 4. Find the mark in your favorite language
 

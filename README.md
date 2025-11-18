@@ -61,13 +61,14 @@ This is not a design choice but a logical requirement for semantic correctness.
 ```
 formatics/
 ├── README.md                          # This file
+├── _ref/
+│   └── form_/                         # Reference files beginning with "form"
+│       ├── formatic_mark.md           # Core definition and concepts
+│       └── formatic_mark.py           # Python implementation & demos
 ├── theory/
-│   ├── formatic_mark.md              # Core definition and concepts
 │   ├── categorical_interpretation.md # Category theory mapping
 │   ├── python_mapping.md             # Pattern matching in Python
 │   └── necessity_proof.md            # Why the mark is mandatory
-├── src/
-│   └── formatic_mark.py              # Python implementation & demos
 └── examples/                         # Future: more demonstrations
 ```
 
@@ -76,13 +77,32 @@ formatics/
 Run the demonstration:
 
 ```bash
-python3 src/formatic_mark.py
+python3 _ref/form_/formatic_mark.py
 ```
 
 This verifies:
 1. The categorical interpretation (Core ≅ Skel)
 2. Python pattern matching structure
 3. The mark equality `([()]) = (())`
+
+## Folder leap tracking (`filestate.py`)
+
+Use `filestate.py` as a single backbone module to detect when a script is run
+from a different directory than the one where it was last executed:
+
+1. Place `filestate.py` in your project root.
+2. In any script that should track folder moves, add:
+
+   ```python
+   from filestate import folderleap
+   ```
+
+On import, `filestate` records the script's current directory using a
+`# ORIGIN:` tag inserted into the file itself. If the script later runs from a
+different folder, `filestate` prints the move, re-runs the script once by
+default, and updates the embedded origin tag. Set `FILESTATE_DISABLE_TRIGGER=1`
+to skip the automatic re-run (helpful in automated tests) or
+`FILESTATE_DISABLE_AUTO_PRIME=1` to disable all automatic behavior.
 
 ## Testing
 
@@ -104,7 +124,7 @@ pytest
 
 For newcomers:
 
-1. Start with [theory/formatic_mark.md](theory/formatic_mark.md) for the basic definition
+1. Start with [_ref/form_/formatic_mark.md](_ref/form_/formatic_mark.md) for the basic definition
 2. Read [theory/python_mapping.md](theory/python_mapping.md) to see it in familiar code
 3. Explore [theory/categorical_interpretation.md](theory/categorical_interpretation.md) for the deep connection
 4. Study [theory/necessity_proof.md](theory/necessity_proof.md) to understand why this is inevitable
