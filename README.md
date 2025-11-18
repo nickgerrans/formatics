@@ -85,6 +85,21 @@ This verifies:
 2. Python pattern matching structure
 3. The mark equality `([()]) = (())`
 
+## Directory prefixes and suffixes
+
+Use `prefix_suffix_index.py` to view every file and folder grouped by the
+alphabetic prefixes and suffixes in their names, ignoring file extensions:
+
+```bash
+python3 prefix_suffix_index.py            # scan from the repository root
+python3 prefix_suffix_index.py tests      # scan a specific subdirectory
+python3 prefix_suffix_index.py --include-hidden
+```
+
+Each section lists entries by prefix first and suffix second so you can see
+clusters like `formET_*` or `_ref/*` together even when they have different
+extensions.
+
 ## Folder leap tracking (`filestate.py`)
 
 Use `filestate.py` as a single backbone module to detect when a script is run
