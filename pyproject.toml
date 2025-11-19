@@ -1,5 +1,5 @@
 [build-system]
-requires = ["setuptools"]
+requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
@@ -9,10 +9,33 @@ dependencies = []
 description = "Formatics: Element Theory and structural syntax."
 readme = "README.md"
 requires-python = ">=3.8"
-license = { file = "LICENSE" }
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: Other/Proprietary License",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Mathematics",
+]
 authors = [
     { name = "Nicholas Gerrans" }
 ]
+
+[project.urls]
+Homepage = "https://github.com/nickgerrans/formatics"
+Repository = "https://github.com/nickgerrans/formatics"
+Issues = "https://github.com/nickgerrans/formatics/issues"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["formatics*"]
+exclude = ["tests*", "examples*", "tools*", "theory*", "_ref*"]
+
+[tool.setuptools.package-data]
+formatics = ["py.typed"]
 
 [tool.pytest.ini_options]
 minversion = "6.0"
