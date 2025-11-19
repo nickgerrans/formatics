@@ -4,8 +4,8 @@ Formatics form anchors: Fixed reference points in element space.
 Anchors provide stable attachment points for element relationships.
 """
 
-from typing import Any, Optional
 from dataclasses import dataclass
+from typing import Any, Optional
 
 
 @dataclass

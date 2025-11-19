@@ -1,9 +1,9 @@
 """Minimal repository standardization utility for Python projects."""
+
 from __future__ import annotations
 
 import argparse
 from pathlib import Path
-from typing import Dict, List
 
 
 class RepoStandardizer:
@@ -11,8 +11,8 @@ class RepoStandardizer:
 
     def __init__(self, repo_path: str | Path = "."):
         self.repo_path = Path(repo_path).resolve()
-        self.issues: List[str] = []
-        self.actions_taken: List[str] = []
+        self.issues: list[str] = []
+        self.actions_taken: list[str] = []
 
     def check_and_create_gitignore(self) -> None:
         """Ensure a .gitignore file exists with Python-specific entries."""
@@ -119,7 +119,7 @@ See LICENSE file for details.
         else:
             self.actions_taken.append("LICENSE file exists")
 
-    def check_python_files(self) -> Dict[str, object]:
+    def check_python_files(self) -> dict[str, object]:
         """Analyze Python files in the repository."""
         py_files = list(self.repo_path.rglob("*.py"))
 
@@ -130,12 +130,10 @@ See LICENSE file for details.
             if not any(excluded in file_path.parts for excluded in excluded_dirs)
         ]
 
-        info: Dict[str, object] = {
+        info: dict[str, object] = {
             "total_files": len(py_files),
             "has_init": any(file_path.name == "__init__.py" for file_path in py_files),
-            "has_main": any(
-                file_path.name in {"__main__.py", "main.py"} for file_path in py_files
-            ),
+            "has_main": any(file_path.name in {"__main__.py", "main.py"} for file_path in py_files),
         }
 
         return info

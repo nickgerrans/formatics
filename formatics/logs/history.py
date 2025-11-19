@@ -4,9 +4,9 @@ Formatics history: Comprehensive transformation logging.
 Records and retrieves element transformation history.
 """
 
-from typing import Any, List, Optional
 from dataclasses import dataclass, field
 from datetime import datetime
+from typing import Any, List
 
 
 @dataclass
@@ -32,10 +32,7 @@ class History:
     def record(self, action: str, element: Any, **metadata) -> None:
         """Record a transformation event."""
         entry = HistoryEntry(
-            timestamp=datetime.now(),
-            action=action,
-            element=element,
-            metadata=metadata
+            timestamp=datetime.now(), action=action, element=element, metadata=metadata
         )
         self.entries.append(entry)
 

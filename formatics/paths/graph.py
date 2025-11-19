@@ -4,8 +4,8 @@ Formatics path graph: Structural navigation graphs.
 Implements graph-based path tracking and element relationships.
 """
 
-from typing import Any, List, Optional, Set
 from dataclasses import dataclass, field
+from typing import Any, List, Optional, Set
 
 
 @dataclass
