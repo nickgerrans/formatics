@@ -5,7 +5,8 @@ Implements leap-aware navigation where folder moves preserve semantic context.
 """
 
 from pathlib import Path
-from typing import Optional, List
+from typing import List
+
 from .filestate import FileState
 
 

@@ -5,9 +5,9 @@ This module provides core file state tracking within the Formatics framework,
 ensuring every element maintains its lineage and transformation path.
 """
 
-from pathlib import Path
-from typing import Optional, Dict, Any
 from datetime import datetime
+from pathlib import Path
+from typing import Any, Dict, Optional
 
 
 class FileState:

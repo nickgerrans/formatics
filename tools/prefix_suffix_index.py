@@ -3,6 +3,7 @@
 The tool scans the directory tree and groups files and folders by their
 leading and trailing alphabetic segments, ignoring file extensions.
 """
+
 from __future__ import annotations
 
 import argparse
@@ -10,7 +11,7 @@ import os
 import re
 from collections import defaultdict
 from pathlib import Path
-from typing import Iterable, List, Sequence
+from typing import Iterable, Sequence
 
 
 def strip_all_suffixes(name: str) -> str:
@@ -34,7 +35,9 @@ def trailing_alpha_segment(text: str) -> str:
 
 def iter_entries(root: Path, include_hidden: bool) -> Iterable[Path]:
     for path in root.rglob("*"):
-        if not include_hidden and any(part.startswith(".") for part in path.relative_to(root).parts):
+        if not include_hidden and any(
+            part.startswith(".") for part in path.relative_to(root).parts
+        ):
             continue
         yield path
 
@@ -43,8 +46,8 @@ def normalize_group_value(value: str, fallback: str) -> str:
     return value if value else fallback
 
 
-def group_entries(paths: Sequence[Path], fallback: str) -> dict[str, List[Path]]:
-    groups: dict[str, List[Path]] = defaultdict(list)
+def group_entries(paths: Sequence[Path], fallback: str) -> dict[str, list[Path]]:
+    groups: dict[str, list[Path]] = defaultdict(list)
     for path in paths:
         base_name = strip_all_suffixes(path.name)
         prefix = normalize_group_value(leading_alpha_segment(base_name), fallback)
@@ -54,7 +57,7 @@ def group_entries(paths: Sequence[Path], fallback: str) -> dict[str, List[Path]]
     return groups
 
 
-def display_groups(title: str, groups: dict[str, List[Path]], root: Path) -> None:
+def display_groups(title: str, groups: dict[str, list[Path]], root: Path) -> None:
     print(title)
     for group_name in sorted(groups):
         entries = sorted(groups[group_name], key=lambda p: p.relative_to(root).as_posix())
@@ -87,8 +90,8 @@ def main() -> None:
 
     root = args.root.resolve()
     entries = list(iter_entries(root, include_hidden=args.include_hidden))
-    prefix_groups: dict[str, List[Path]] = defaultdict(list)
-    suffix_groups: dict[str, List[Path]] = defaultdict(list)
+    prefix_groups: dict[str, list[Path]] = defaultdict(list)
+    suffix_groups: dict[str, list[Path]] = defaultdict(list)
 
     for path in entries:
         base_name = strip_all_suffixes(path.name)

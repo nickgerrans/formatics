@@ -1,0 +1,55 @@
+cff-version: 1.2.0
+message: "If you use Formatics in your research, please cite it as follows:"
+title: "Formatics: The Structural Theory of Marks"
+version: 0.1.0
+date-released: 2025-01-01
+authors:
+  - family-names: Gerrans
+    given-names: Nicholas
+    orcid: ""
+repository-code: "https://github.com/nickgerrans/formatics"
+license: "Proprietary - Academic Use Only"
+type: software
+abstract: >
+  Formatics identifies and formalizes structural marks—fundamental
+  patterns that appear across multiple domains not by coincidence, but
+  by mathematical necessity. The foundational structure is the Formatic
+  mark: ([()]) = (()). This equation encodes a deep structural truth
+  that manifests in category theory (Core/Skeleton equivalence),
+  programming languages (pattern matching), type theory (universal
+  quantification), and universal algebra (terminal objects).
+
+keywords:
+  - category theory
+  - pattern matching
+  - structural invariants
+  - universal algebra
+  - formal methods
+  - type theory
+
+references:
+  - type: theory
+    title: "Categorical Interpretation of the Formatic Mark"
+    url: "https://github.com/nickgerrans/formatics/blob/main/theory/categorical_interpretation.md"
+  - type: theory
+    title: "Necessity Proof for Pattern Matching Languages"
+    url: "https://github.com/nickgerrans/formatics/blob/main/theory/necessity_proof.md"
+
+preferred-citation:
+  type: software
+  authors:
+    - family-names: Gerrans
+      given-names: Nicholas
+  title: "Formatics: The Structural Theory of Marks"
+  year: 2025
+  repository-code: "https://github.com/nickgerrans/formatics"
+  license: "Proprietary - Academic Use Only"
+  notes: >
+    When citing Formatics, you must:
+    (1) Reference this repository and the copyright holder by name.
+    (2) Clearly distinguish your work from Formatics itself.
+    (3) Not claim ownership or create competing frameworks based on
+        derivative works without explicit written permission.
+    Academic use is permitted under the terms of the LICENSE file.
+    Commercial use requires explicit written permission from the
+    copyright holder.

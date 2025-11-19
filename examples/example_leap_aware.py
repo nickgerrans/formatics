@@ -1,5 +1,4 @@
 # ORIGIN:/home/user/formatics
-from filestate import folderleap
 
 # This script is now leap-aware!
 # When you move it to a different directory, filestate will:
