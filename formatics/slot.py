@@ -40,13 +40,9 @@ class Slot:
     def __post_init__(self) -> None:
         """Validate slot position on creation."""
         if not isinstance(self.position, int):
-            raise InvalidSlotPositionError(
-                self.position, "position must be an integer"
-            )
+            raise InvalidSlotPositionError(self.position, "position must be an integer")
         if self.position < 0:
-            raise InvalidSlotPositionError(
-                self.position, "position must be non-negative"
-            )
+            raise InvalidSlotPositionError(self.position, "position must be non-negative")
 
     def fill(self, element: Any, *, allow_overwrite: bool = False) -> None:
         """

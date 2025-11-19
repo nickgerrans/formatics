@@ -31,9 +31,7 @@ class SlotOccupiedError(SlotError):
     def __init__(self, position: int | str, current_value: object):
         self.position = position
         self.current_value = current_value
-        super().__init__(
-            f"Slot at position {position} is already occupied with {current_value!r}"
-        )
+        super().__init__(f"Slot at position {position} is already occupied with {current_value!r}")
 
 
 class SlotEmptyError(SlotError):

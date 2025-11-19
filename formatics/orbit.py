@@ -105,8 +105,7 @@ class Orbit:
             self.current_index = self.states.index(state_name)
         except ValueError as e:
             raise ValueError(
-                f"State {state_name!r} not found in orbit. "
-                f"Available states: {self.states}"
+                f"State {state_name!r} not found in orbit. Available states: {self.states}"
             ) from e
 
     def __repr__(self) -> str:
@@ -114,5 +113,5 @@ class Orbit:
             return f"Orbit(element={self.element!r}, state=EMPTY)"
         return (
             f"Orbit(element={self.element!r}, "
-            f"state={self.current_state()!r} [{self.current_index}/{len(self.states)-1}])"
+            f"state={self.current_state()!r} [{self.current_index}/{len(self.states) - 1}])"
         )

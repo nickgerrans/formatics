@@ -14,7 +14,7 @@ from pathlib import Path
 # Add parent directory to path for imports
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from formatics.exceptions import SlotEmptyError, SlotOccupiedError, EmptyOrbitError
+from formatics.exceptions import EmptyOrbitError, SlotEmptyError, SlotOccupiedError
 from formatics.orbit import Orbit
 from formatics.slot import Slot
 
@@ -109,7 +109,7 @@ def demonstrate_orbits():
 
     # Error handling: empty orbit
     try:
-        empty_orbit = Orbit(element="test", states=[])
+        Orbit(element="test", states=[])
     except EmptyOrbitError as e:
         print(f"✓ Caught expected error: {e}")
 

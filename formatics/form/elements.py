@@ -36,9 +36,7 @@ class Element:
     def __post_init__(self) -> None:
         """Validate element on creation."""
         if not isinstance(self.metadata, dict):
-            raise InvalidElementError(
-                self.value, "metadata must be a dictionary"
-            )
+            raise InvalidElementError(self.value, "metadata must be a dictionary")
 
     def transform(self, func: Callable[[Any], Any]) -> Element:
         """
@@ -63,9 +61,7 @@ class Element:
         try:
             new_value = func(self.value)
         except Exception as e:
-            raise InvalidElementError(
-                self.value, f"transformation failed: {e}"
-            ) from e
+            raise InvalidElementError(self.value, f"transformation failed: {e}") from e
 
         return Element(value=new_value, metadata=self.metadata.copy())
 
@@ -91,7 +87,7 @@ class Element:
         """
         if not isinstance(other, Element):
             return NotImplemented
-        return self.value == other.value
+        return bool(self.value == other.value)
 
     def __hash__(self) -> int:
         """Allow elements to be used in sets/dicts (based on value)."""
@@ -133,15 +129,12 @@ class FormElement:
     def __post_init__(self) -> None:
         """Validate form on creation."""
         if not isinstance(self.elements, list):
-            raise InvalidFormError(
-                f"elements must be a list, got {type(self.elements).__name__}"
-            )
+            raise InvalidFormError(f"elements must be a list, got {type(self.elements).__name__}")
         # Validate all elements
         for i, elem in enumerate(self.elements):
             if not isinstance(elem, Element):
                 raise InvalidFormError(
-                    f"Element at index {i} must be Element instance, "
-                    f"got {type(elem).__name__}"
+                    f"Element at index {i} must be Element instance, got {type(elem).__name__}"
                 )
 
     def add(self, element: Element) -> None:
@@ -155,9 +148,7 @@ class FormElement:
             InvalidFormError: If element is invalid
         """
         if not isinstance(element, Element):
-            raise InvalidFormError(
-                f"Can only add Element instances, got {type(element).__name__}"
-            )
+            raise InvalidFormError(f"Can only add Element instances, got {type(element).__name__}")
         self.elements.append(element)
 
     def remove(self, element: Element) -> None:
@@ -173,9 +164,7 @@ class FormElement:
         try:
             self.elements.remove(element)
         except ValueError as e:
-            raise ValueError(
-                f"Element {element!r} not found in form"
-            ) from e
+            raise ValueError(f"Element {element!r} not found in form") from e
 
     def compose(self) -> list[Any]:
         """
@@ -204,9 +193,7 @@ class FormElement:
         try:
             transformed_elements = [elem.transform(func) for elem in self.elements]
         except Exception as e:
-            raise InvalidFormError(
-                f"Failed to transform form elements: {e}"
-            ) from e
+            raise InvalidFormError(f"Failed to transform form elements: {e}") from e
 
         return FormElement(elements=transformed_elements, form_type=self.form_type)
 
